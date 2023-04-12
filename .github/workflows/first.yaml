@@ -16,6 +16,8 @@ jobs:
         echo bar
   job2:
     runs-on: windows-latest
+    needs: [job1]
+
     steps:
       - uses: actions/checkout@v1
       - name: Run simple script
