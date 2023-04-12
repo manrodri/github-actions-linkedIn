@@ -6,22 +6,28 @@ on:
       - challenge1
 
 jobs:
-  - job1:
+  job1:
       name: linux
       runs-on: ubuntu-latest
-      run: date
+      steps:
+        - run: date
 
-  - job2:
+  job2:
       name: windows
       runs-on: windows-latest
-      run: Get-Date
-  - job3:
+      steps:
+      - run: Get-Date
+  job3:
       name: mac
       runs-on: macos-latest
-      run: date
-  - job4:
+      steps:
+
+      - run: date
+  job4:
       needs: [job1, job2, job3]
       name: any
       runs-on: ubuntu-latest
-      run: date
+      steps: 
+
+      - run: date
 
