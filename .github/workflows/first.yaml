@@ -3,7 +3,7 @@ name: first
 on: push
 
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
     
     steps:
@@ -14,5 +14,12 @@ jobs:
       run: |
         echo foo
         echo bar
+  job2:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run simple script
+        run: |
+          echo 'Hello from windows'
         
 
